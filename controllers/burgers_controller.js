@@ -1,23 +1,24 @@
 var express = require("express");
-var express = require("../models/burger.js")
+var burgers = require("../models/burger.js")
 
+//create router and export at end of file
 var router = express.Router();
 
 // show (read) the burgers in the database
-router.get("/", function (req, res) {
-    burgers.selectAll(function (data) {
-        var burgerObject = {
+router.get("/", function(req, res) {
+    burgers.all(function (data) {
+        var hbsObject = {
             burgers: data
         };
-        console.log(burgerObject);
-        res.render("indext", burgerObject);
+        console.log(hbsObject);
+        res.render("index", hbsObject);
     });
 });
 
 // Add burger to the database (create the burger database)
 router.post("/api/burgers", function (req, res) {
     burgers.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function (result) {
-      //show data in handelbars
+        //show data in handelbars
         res.json({ id: result.insertID });
     });
 });
@@ -36,5 +37,4 @@ router.put("/api/burgers/:id", function (req, res) {
     })
 });
 
-// Import the model (cat.js) to use its database functions.
-var burgers = require("../models/burger.js");
+module.exports = router;
