@@ -1,0 +1,102 @@
+.bodyBG {
+  background-color: #00000b;
+}
+
+.bgColor {
+  background-color: #00000b;
+}
+
+.jumbotron {
+  background: url("./Images/hamburger_top_CC.jpg") no-repeat center top;
+  background-color: #00000b;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+}
+
+.headline {
+  text-align: center;
+  font-family: "Permanent Marker", cursive;
+  font-size: 6em;
+  color: white;
+  width: auto;
+  padding-top: 425px;
+  text-shadow: 2px 2px 4px #00000b;
+}
+
+.container {
+  width: 50%;
+  margin: auto;
+}
+
+.row {
+  text-align: center;
+}
+
+.burgerList {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 1em;
+  list-style-type: none;
+  align-content: center;
+}
+
+.devourList {
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+  text-decoration: line-through;
+  font-size: 1em;
+  list-style-type: none;
+  align-content: center;
+}
+
+.formHead {
+  position: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 3px;
+  padding-bottom: 0px;
+}
+
+.form {
+  text-align: center;
+}
+
+.devourBtn {
+  background-color: green;
+  color: white;
+  margin-left: 15px;
+  border: none;
+  border-radius: 4px;
+  align-content: right;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 30%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: crimson;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  /* align-items: center; */
+}
+
+/* .formStyle {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text
+} */

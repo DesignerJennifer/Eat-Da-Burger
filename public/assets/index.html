@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="burger-stylesheet.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body class="bodyBG">
+    <!-- healine -->
+    <div class="jumbotron jumbotron-fluid">
+      <h1 class="headline">Eat-Da-Burger!</h1>
+    </div>
+    <!-- Undevoured Burgers -->
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <ul class="burgerList">
+          <!-- {{#each burgers}} {{#unless devoured}} -->
+          <li>
+            Bacon Cheese Burger
+            <!-- {{this.id}} - {{this.burger_name}}  -->
+            <button data-burgerid="{{this.id}}" class="devourBtn">
+              Devour It!
+            </button>
+          </li>
+          <!-- {{/unless}} {{/each}} -->
+        </ul>
+      </div>
+
+      <div class="col-4">
+        <ul class="devourList">
+          <!-- {{#each burgers}} {{#if devoured}} -->
+          Double Cheese Burger
+          <!-- {{this.id}} - {{this.burger_name}}  -->
+
+          <!-- {{/if}} {{/each}} -->
+        </ul>
+      </div>
+    </div>
+
+    <div class="form">
+      <p class="formHead">Enter a burger you want to eat.</p>
+      <br /><br />
+      <form>
+        <input type="text" />
+        <input type="submit" value="Save Burger" />
+      </form>
+    </div>
+  </body>
+</html>
