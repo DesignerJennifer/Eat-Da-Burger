@@ -1,0 +1,43 @@
+<!-- healine -->
+    <div class="jumbotron jumbotron-fluid">
+      <h1 class="headline">Eat-Da-Burger!</h1>
+    </div>
+
+<!-- Undevoured Burgers -->
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <ul class="burgerList">
+          {{#each burgers}} 
+          {{#unless devoured}}
+          <li>
+            {{this.id}} - {{this.burger_name}}
+
+            <button data-burgerid="{{this.id}}" class="devourBtn">
+              Devour It!
+            </button>
+          </li>
+          {{/unless}} 
+          {{/each}}
+        </ul>
+      </div>
+
+      <div class="col-4">
+        <ul class="devourList">
+          {{#each burgers}} 
+          {{#if devoured}}
+          
+            {{this.id}} - {{this.burger_name}}
+
+          {{/if}} 
+          {{/each}}
+        </ul>
+      </div>
+
+    <div class="form">
+      <p class="formHead">Enter a burger you want to eat.</p>
+      <br /><br />
+      <form>
+        <input type="text" />
+        <input type="submit" value="Save Burger" />
+      </form>
+    </div>
