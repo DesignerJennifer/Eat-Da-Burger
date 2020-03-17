@@ -5,7 +5,7 @@ var burgers = require("../models/burger.js")
 var router = express.Router();
 
 // show (read) the burgers in the database
-router.get("/", function(req, res) {
+router.get("/", function (req, res) {
     burgers.all(function (data) {
         var hbsObject = {
             burgers: data
@@ -17,7 +17,13 @@ router.get("/", function(req, res) {
 
 // Add burger to the database (create the burger database)
 router.post("/api/burgers", function (req, res) {
-    burgers.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function (result) {
+    console.log(req.body)
+    req.body.devoured = false
+    burgers.create([
+        "burger_name", "devoured"
+    ], [
+        req.body.burger_name, req.body.devoured
+    ], function (result) {
         //show data in handelbars
         res.json({ id: result.insertID });
     });
@@ -25,16 +31,19 @@ router.post("/api/burgers", function (req, res) {
 
 // devour is set to true (update)
 router.put("/api/burgers/:id", function (req, res) {
-    var condition = "id =" + req.params.id;
+    var condition = "id = " + req.params.id;
+
     console.log("condition", condition);
 
-    burgers.updateOne({ devoured: req.body.devoured }, condition, function (result) {
+    burgers.update({
+        devoured: req.body.devoured
+    }, condition, function (result) {
         if (result.changedRows === 0) {
             return res.status(404).end();
         } else {
             res.status(200).end();
         }
-    })
+    });
 });
 
 module.exports = router;

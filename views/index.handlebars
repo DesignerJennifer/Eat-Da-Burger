@@ -12,7 +12,7 @@
           <li>
             {{this.id}} - {{this.burger_name}}
 
-            <button data-burgerid="{{this.id}}" class="devourBtn">
+            <button data-burgerid="{{this.id}}"   data-newDevour="true" class="devourBtn">
               Devour It!
             </button>
           </li>
@@ -27,7 +27,7 @@
           {{#if devoured}}
           
             {{this.id}} - {{this.burger_name}}
-
+<br><br>
           {{/if}} 
           {{/each}}
         </ul>
@@ -36,8 +36,9 @@
     <div class="form">
       <p class="formHead">Enter a burger you want to eat.</p>
       <br /><br />
-      <form>
-        <input type="text" />
+      <form  class="create-form">
+        <input type="text"  id="burgerList" />
         <input type="submit" value="Save Burger" />
       </form>
+
     </div>
