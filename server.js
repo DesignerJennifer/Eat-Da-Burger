@@ -1,8 +1,21 @@
 var express = require("express");
-
-var PORT = process.env.PORT || 8080;
+var mysql = require("mysql");
 
 var app = express();
+
+if (process.env.JAWSDB_URL) {
+    var connection = mysql.createConnection(process.env.JAWSDB_URL)
+} else {
+    var connection = mysql.createConnection({
+        host: "localhost",
+        port: 3306,
+        user: "root",
+        password: "4899",
+        database: "burgers_db"
+    });
+}
+
+var PORT = process.env.PORT || 8080;
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
