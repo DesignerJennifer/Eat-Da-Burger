@@ -25,6 +25,11 @@
   text-shadow: 2px 2px 4px #00000b;
 }
 
+#wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+}
 .container {
   width: 50%;
   margin: auto;
@@ -32,6 +37,9 @@
 
 .row {
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
 }
 
 .burgerList {
